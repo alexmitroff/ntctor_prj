@@ -59,5 +59,14 @@
 </section>
 <section id="partners">
     <h2>Сотрудничество</h2>
+    <div class="partners">
+        {% for p in partners %}
+            <a {% if p.url %}href="{{p.url}}"{% endif %}>
+                <span class="name{% if p.antey %} antey{% endif %}">{{p.name}}</span>
+                <span class="city">{{p.city}}</span>
+            </a>
+        {% empty %}
+        {% endfor %}
+    </div>    
 </section>
 {% endblock %}

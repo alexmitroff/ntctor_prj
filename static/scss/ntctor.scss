@@ -1,8 +1,10 @@
 $font-color:#444;
+$border-color:#ddd;
+
 
 $transition:all .3s ease-in-out 0s;
-$img-border:.1rem solid #eee;
-
+$img-border:.1rem solid $border-color;
+$border-radius:.2rem;
 
 /* Rules for small devices (mobile vertical) */
 
@@ -42,7 +44,7 @@ body{
     > footer{
         display:block;
         background-color:#444;
-        color: #fff; /* font color */
+        color: #eee; /* font color */
         min-height: 10rem;
     }
 }
@@ -90,6 +92,53 @@ p{
     margin-bottom:.5rem;
 }
 
+.partners{
+    display:flex;
+    flex-direction:column;
+    > a {
+        display:flex;
+        flex-direction:column;
+        color:$font-color;
+        padding:1rem;
+        background-color:white;
+        border-bottom:$img-border;
+        text-decoration:none;
+        transition:$transition;
+        
+        > .name{
+            font-size:1.1rem;
+        }
+
+        > .city{
+            color:lighter($font-color);
+        }
+
+        > .city:before{
+            content:"г. ";
+        }
+
+        > .antey:after{
+            content:" (концерн Амаз-Антей)";
+            color:#376EB5;
+            white-space:nowrap;
+        }
+    }
+
+    > a:hover,
+    > a:focus{
+        background-color:$border-color;
+    }
+
+    > a:first-child{
+        border-radius:$border-radius $border-radius 0 0;
+    }
+
+    > a:last-child{
+        border-radius:0 0 $border-radius $border-radius;
+        border:none;
+    }
+}
+
 #mobile-menu-button{
     display:block;
     padding:1rem;
@@ -113,10 +162,10 @@ p{
 
         > .image{
             display:block;
-            padding:.2rem;
+            padding:$border-radius;
             border:$img-border;
             background-color:white;
-            border-radius:.2rem;
+            border-radius:$border-radius;
             margin-bottom:1rem;
             > img{
                 display:block;

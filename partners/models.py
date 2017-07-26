@@ -6,8 +6,8 @@ class City(models.Model):
             blank=True, null=True)
     
     class Meta:
-        varbose_name = u"Город"
-        varbose_name_plural = u"Города"
+        verbose_name = u"Город"
+        verbose_name_plural = u"Города"
         ordering = ["name"]
 
     def __str__(self):
@@ -18,14 +18,14 @@ class Partner(models.Model):
     show = models.BooleanField(u"отображать", default = True) 
     name = models.CharField( u"имя", max_length = 140,
             blank=True, null=True)
-    city = models.ForeignKey(NewsCategory, default = 0)
+    city = models.ForeignKey(City, default = 0)
     url = models.CharField( u"ссылка", max_length = 250,
             blank=True, null=True)
     antey = models.BooleanField(u"алмаз-антей", default = False) 
     
     class Meta:
-        varbose_name = u"Партнёр"
-        varbose_name_plural = u"Партнёры"
+        verbose_name = u"Партнёр"
+        verbose_name_plural = u"Партнёры"
         ordering = ["pos"]
 
     def __str__(self):
