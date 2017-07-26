@@ -1,6 +1,8 @@
 $font-color:#444;
 
 $transition:all .3s ease-in-out 0s;
+$img-border:.1rem solid #eee;
+
 
 /* Rules for small devices (mobile vertical) */
 
@@ -104,17 +106,21 @@ p{
 #about{
     > .images{
         display:flex;
+        flex-wrap:wrap;
         justify-content:space-around;
         align-items:center;
-        margin-bottom:1rem;
+        margin:2rem 0 1rem 0;
 
         > .image{
             display:block;
-            background-position:center;
-            background-size:cover;
-            background-repeat:no-repeat;
-            height:10rem;
-            width:15rem;
+            padding:.2rem;
+            border:$img-border;
+            background-color:white;
+            border-radius:.2rem;
+            margin-bottom:1rem;
+            > img{
+                display:block;
+            }
         }
     }
 }
