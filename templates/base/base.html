@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}{% endblock %}  НТЦ КТ «ТОР»</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/ntctor.css' %}">
+    </head>
+    
+    <body>
+        <header>
+            {% include "include/menu.html" %}
+        </header>
+        <main>
+            <div class="container">
+                {% block main %}{% endblock %}
+            </div>
+        </main>
+        <footer></footer>
+        <script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){                    // When HTML document ready execute scripts
+                $("#mobile-menu-button").click(function(){   // add function to button click event which will
+                    $("#global-menu").toggleClass("active"); // toggle 'active' class for global menu 
+                });
+            });
+        </script>
+    </body>
+</html>
