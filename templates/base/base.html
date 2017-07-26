@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}{% endblock %}  НТЦ КТ «ТОР»</title>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet"> 
         <link rel="stylesheet" type="text/css" href="{% static 'css/ntctor.css' %}">
     </head>
     
@@ -13,9 +14,9 @@
             {% include "include/menu.html" %}
         </header>
         <main>
-            <div class="container">
+            <article class="container">
                 {% block main %}{% endblock %}
-            </div>
+            </article>
         </main>
         <footer></footer>
         <script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>

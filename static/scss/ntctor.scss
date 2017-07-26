@@ -1,3 +1,5 @@
+$font-color:#444;
+
 $transition:all .3s ease-in-out 0s;
 
 /* Rules for small devices (mobile vertical) */
@@ -8,12 +10,16 @@ $transition:all .3s ease-in-out 0s;
     box-sizing:border-box;
     }
 
+html{
+    font-family: 'Source Sans Pro', sans-serif;
+    color:$font-color;
+}
+
 body{
     background-color:#eee;
     display:flex;
     flex-direction:column;
     min-height:100vh;
-    font-family:sans;
 
     > header{
         display:block;
@@ -65,6 +71,23 @@ nav{
     margin:0 auto;
 }
 
+section{
+    margin-bottom:1rem;
+    padding:0 1rem;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:2rem;
+}
+h2{
+    margin-bottom:1rem;
+}
+
+p{
+    margin-bottom:.5rem;
+}
+
 #mobile-menu-button{
     display:block;
     padding:1rem;
@@ -76,6 +99,24 @@ nav{
 
 #mobile-menu-button:hover{
     color:#444;
+}
+
+#about{
+    > .images{
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        margin-bottom:1rem;
+
+        > .image{
+            display:block;
+            background-position:center;
+            background-size:cover;
+            background-repeat:no-repeat;
+            height:10rem;
+            width:15rem;
+        }
+    }
 }
 
 ul.active{
@@ -102,10 +143,12 @@ ul.active{
 @media (min-width:920px) and (max-width:1199px) {
     main > div{background-color:green;}
     .container{width:920px;}
+    section{padding:0;}
 }
 
 /* Rules for large screens */
 @media (min-width:1200px) {
     main > div{background-color:skyblue;}
     .container{width:920px;}
+    section{padding:0;}
 }
